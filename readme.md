@@ -29,6 +29,28 @@ And place this at the bottom of your body of your HTML file:
 ## Demo
 You can find a live demo [here](https://michaelgira.me/svg-bar)
 
+## Use
+Simply wrap the SVG around a `<div class="svg-progress">` and apply the `svg-progress-bar` class to any shape and assign `progress:percent` to a percentage between 0 and 100. Reference the example below:
+```html
+<div class="svg-progress">
+	<div class="progress-label">Progress!</div>
+	<svg xmlns:progress="http://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
+		<circle class="svg-progress-bar progress-bar-green progress-bar-thin" cx="-500" cy="500" r="420" progress:percent="45"></circle>
+	</svg>
+</div>
+```
+This will create a green circle progress bar filled in at 45%.
+
+## Available Classes
+| Class | Use |
+| ------------- | ------------- |
+| .svg-progress-bar-thin | Makes the progress bar thinner |
+| .svg-progress-bar-green | Makes the progress bar green |
+| .svg-progress-bar-blue | Makes the progress bar blue |
+| .svg-progress-bar-yellow | Makes the progress bar yellow |
+| .svg-progress-bar-red | Makes the progress bar red |
+| .svg-progress-bar-black | Makes the progress bar black |
+
 ## Note
 Watch out! Circles are rotated by -90 degress so the line will start on the top and proceed clockwise.
 
