@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Demo MyMICDS - 5</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="SVGbar.css">
+        
+        <style>
+            * {
+                font-family: 'Open Sans', sans-serif !important;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1>Boring <strong>Normal</strong> Progress Bar</h1>
+            <div class="svg-progress">
+                <div class="progress-label">I'm so boring</div>
+                <svg xmlns:progress="http://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 200">
+                    <line class="svg-progress-bar progress-bar-green" x1="25" y1="100" x2="975" y2="100" progress:percent="45"></line>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h1>Circle / Ellipse Progress Bar</h1>
+
+            <div class="svg-progress">
+                <div class="progress-label">Progress!</div>
+                <svg xmlns:progress="http://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
+                    <circle class="svg-progress-bar progress-bar-green" cx="-500" cy="500" r="420" progress:percent="45"></circle>
+                    <circle class="svg-progress-bar progress-bar-blue" cx="-500" cy="500" r="300" progress:percent="45"></circle>
+                </svg>
+            </div>
+
+            <div class="svg-progress">
+                <div class="progress-label">More Progress!</div>
+                <svg xmlns:progress="http://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 500">
+                    <ellipse class="svg-progress-bar progress-bar-yellow" cx="-250" cy="500" rx="200" ry="450" progress:percent="45"></ellipse>
+                    <ellipse class="svg-progress-bar progress-bar-red" cx="-250" cy="500" rx="200" ry="450" progress:percent="45"></ellipse>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h1>Rectangle Progress Bar</h1>
+            
+            <div class="svg-progress">
+                <div class="progress-label">Percentage until World Domination</div>
+                <svg xmlns:progress="http://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
+                    <rect class="svg-progress-bar svg-progress-bar-thin progress-bar-green" x="200" y="50" width="600" height="900" progress:percent="0"></rect>
+                </svg>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Star Progress Bar</h1>
+        </div>
+        <div class="container">
+            <h1>Custom Progress Bar</h1>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="SVGbar.js"></script>
+        <script>            
+            function getRandom(min, max) {
+                return min + Math.floor(Math.random() * (max - min + 1));
+            }
+            
+            setInterval(function() {
+                $('.svg-progress-bar').each(function(index) {
+                    var int = getRandom(0, 100);
+                    $(this).attr('progress:percent', int);
+                });
+            }, 1000);
+            
+//            var input = $('.ellipse-input');
+//            var output = $('.ellipse-output');
+//            var ellipse = $('ellipse.svg-progress-bar');
+//            
+//            setInterval(function() {
+//                var value = input.val();
+//                output.text(value);
+//                ellipse.attr('progress:percent', value);
+//            }, 100);
+        </script>
+    </body>
+</html>

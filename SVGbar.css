@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+
+.svg-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-label {
+    background-color: rgba(33, 176, 178, 0.5);
+    color: rgba(39, 47, 47, 0.7);
+    padding: 0.3em;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0.25em;
+}
+
+svg {
+    width: 30em;
+}
+
+circle.svg-progress-bar,
+ellipse.svg-progress-bar {
+    transform: rotate(-90deg);
+}
+
+.svg-progress-bar {
+    fill-opacity: 0;
+    stroke-width: 2em;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.svg-progress-bar-thin {
+    stroke-width: 1em;
+}
+
+.progress-bar-green {
+    stroke: rgba(0, 128, 0, 0.5);
+}
+
+.progress-bar-blue {
+    stroke: rgba(173, 216, 230, 0.5);
+}
+
+.progress-bar-yellow {
+    stroke: rgba(255, 255, 0, 0.5);
+}
+
+.progress-bar-red {
+    stroke: rgba(255, 0, 0, 0.5);
+}
