@@ -39,6 +39,14 @@
                     var perimeter = distance(x1, y1, x2, y2);
                     break;
                     
+                case 'polygon':
+                    var coords = progressBar.attr('points');
+                    var points = coords.split(' ');
+                    break;
+                    
+                case 'polyline':
+                    break;
+                    
                 case 'rect':
                     var height = progressBar.attr('height');
                     var width = progressBar.attr('width');
