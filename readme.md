@@ -4,7 +4,7 @@
 Well I'm glad you asked, random stranger! SVGbar.js will completely redefine what you think about progress bars **to this day.** It allows for you to make progress bars with SVG lines, shapes, paths, and more! It takes advantage of the `stroke-dasharray` and the `stroke-dashoffset` of any given SVG shape.
 
 ## Requirements
-SVGbar.js requires jQuery. **You must include this file before you include the Javascript file.**
+SVGbar.js requires jQuery. **You must include jQuery before you include the Javascript file.**
 
 The latest version of jQuery can be downloaded [here](https://jquery.com/)
 
