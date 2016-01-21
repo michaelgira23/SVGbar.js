@@ -79,6 +79,10 @@
                     var perimeter = height * 2 + width * 2;
                     break;
                     
+                case 'path':
+                    var perimeter = progressBar.get(0).getTotalLength();
+                    break;
+                    
                 default:
                     if(warn > 0) {
                         warn--;

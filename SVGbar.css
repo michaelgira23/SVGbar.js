@@ -25,13 +25,13 @@ ellipse.svg-progress-bar {
 
 .svg-progress-bar {
     fill-opacity: 0;
-    stroke-width: 2em;
+    stroke-width: 3%;
     transition-duration: 1s;
     transition-timing-function: ease;
 }
 
 .svg-progress-bar-thin {
-    stroke-width: 1em;
+    stroke-width: 1%;
 }
 
 .progress-bar-green {
@@ -48,4 +48,8 @@ ellipse.svg-progress-bar {
 
 .progress-bar-red {
     stroke: rgba(255, 0, 0, 0.5);
+}
+
+.progress-bar-black {
+    stroke: rgba(0, 0, 0, 0.5);
 }
