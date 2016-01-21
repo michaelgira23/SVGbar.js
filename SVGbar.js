@@ -42,9 +42,35 @@
                 case 'polygon':
                     var coords = progressBar.attr('points');
                     var points = coords.split(' ');
+                    var pointcoords = [];
+                    for (var i = 0; i <= points.length - 1; i++) {
+                        pointcoords[i] = points[i].split(',');
+                        // x value in pointcoords[pointnum][0], y value in pointcoords[pointnum][0]
+                    }
+                    var totalDist = 0;
+                    for (var i = 0; i <= points.length - 2; i++) {
+                        // adds all the distances between the various points
+                        totalDist += distance(pointcoords[i][0], pointcoords[i][1], pointcoords[i + 1][0], pointcoords[i + 1][1]);
+                    }
+                    // adds the distance between the last point and the first
+                    totalDist += distance(pointcoords[pointcoords.length - 1][0], pointcoords[pointcoords.length - 1][1], pointcoords[0][0], pointcoords[0][1]);
+                    var perimeter = totalDist;
                     break;
                     
                 case 'polyline':
+                    var coords = progressBar.attr('points');
+                    var points = coords.split(' ');
+                    var pointcoords = [];
+                    for (var i = 0; i <= points.length - 1; i++) {
+                        pointcoords[i] = points[i].split(',');
+                        // x value in pointcoords[pointnum][0], y value in pointcoords[pointnum][0]
+                    }
+                    var totalDist = 0;
+                    for (var i = 0; i <= points.length - 2; i++) {
+                        // adds all the distances between the various points
+                        totalDist += distance(pointcoords[i][0], pointcoords[i][1], pointcoords[i + 1][0], pointcoords[i + 1][1]);
+                    }
+                    var perimeter = totalDist;
                     break;
                     
                 case 'rect':
