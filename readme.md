@@ -21,6 +21,7 @@ And place this at the bottom of your body of your HTML file:
 ```html
 <!-- jQuery best Query -->
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
 <!-- Make the progress bars do stuff -->
 <script src="path/to/SVGbar.js"></script>
 ```
