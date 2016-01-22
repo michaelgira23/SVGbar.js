@@ -40,11 +40,12 @@ This will create a green circle progress bar filled in at 45%.
 | ------------- | ------------- |
 | .svg-progress-bar | Triggers SVGbar.js |
 | .svg-progress-bar-thin | Makes the progress bar thinner |
-| .svg-progress-bar-green | Makes the progress bar green |
-| .svg-progress-bar-blue | Makes the progress bar blue |
-| .svg-progress-bar-yellow | Makes the progress bar yellow |
-| .svg-progress-bar-red | Makes the progress bar red |
-| .svg-progress-bar-black | Makes the progress bar black |
+| .progress-bar-green | Makes the progress bar green |
+| .progress-bar-blue | Makes the progress bar blue |
+| .progress-bar-yellow | Makes the progress bar yellow |
+| .progress-bar-red | Makes the progress bar red |
+| .progress-bar-black | Makes the progress bar black |
+| .progress-label | A label for your progress bars |
 
 ## Note
 Watch out! Circles are rotated by -90 degress so the line will start on the top and proceed clockwise.
