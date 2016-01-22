@@ -4,9 +4,7 @@
 Well I'm glad you asked, random stranger! SVGbar.js will completely redefine what you think about progress bars **to this day.** It allows for you to make progress bars with SVG lines, shapes, paths, and more! It takes advantage of the `stroke-dasharray` and the `stroke-dashoffset` of any given SVG shape.
 
 ## Requirements
-SVGbar.js requires jQuery. **You must include jQuery before you include the Javascript file.**
-
-The latest version of jQuery can be downloaded [here](https://jquery.com/)
+Hey, look at that! SVGbar.js requires **no external libraries**! Isn't that great?
 
 ## Installation
 Simply download the repository, and place the `SVGbar.js` in a really cool spot and the `SVGbar.css` in a really cool spot.
@@ -19,8 +17,6 @@ Place this somewhere in your head of your HTML file:
 
 And place this at the bottom of your body of your HTML file:
 ```html
-<!-- jQuery best Query -->
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 <!-- Make the progress bars do stuff -->
 <script src="path/to/SVGbar.js"></script>
@@ -30,14 +26,12 @@ And place this at the bottom of your body of your HTML file:
 You can find a live demo [here](https://michaelgira.me/svg-bar)
 
 ## Use
-Simply wrap the SVG around a `<div class="svg-progress">` and apply the `svg-progress-bar` class to any shape and assign `progress:percent` to a percentage between 0 and 100. Reference the example below:
+Simply add the `progress` namespace to your SVG, apply the `svg-progress-bar` class to any shape, and assign `progress:percent` to a percentage between 0 and 100. Reference the example below:
 ```html
-<div class="svg-progress">
-	<div class="progress-label">Progress!</div>
-	<svg xmlns:progress="http://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
-		<circle class="svg-progress-bar progress-bar-green progress-bar-thin" cx="-500" cy="500" r="420" progress:percent="45"></circle>
-	</svg>
-</div>
+<div class="progress-label">Progress!</div> <!-- Optional! -->
+<svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
+    <circle class="svg-progress-bar progress-bar-green progress-bar-thin" cx="-500" cy="500" r="420" progress:percent="45"></circle>
+</svg>
 ```
 This will create a green circle progress bar filled in at 45%.
 
