@@ -47,20 +47,28 @@ ellipse.svg-progress-bar {
     stroke-width: 1%;
 }
 
-.progress-bar-green {
-    stroke: rgba(0, 128, 0, 0.5);
+.progress-bar-red {
+    stroke: rgba(255, 0, 0, 0.5);
 }
 
-.progress-bar-blue {
-    stroke: rgba(173, 216, 230, 0.5);
+.progress-bar-orange {
+    stroke: rgba(255, 127.5, 0, 0.5);
 }
 
 .progress-bar-yellow {
     stroke: rgba(255, 255, 0, 0.5);
 }
 
-.progress-bar-red {
-    stroke: rgba(255, 0, 0, 0.5);
+.progress-bar-green {
+    stroke: rgba(0, 128, 0, 0.5);
+}
+
+.progress-bar-blue {
+    stroke: rgba(0, 0, 255, 0.5);
+}
+
+.progress-bar-purple {
+    stroke: rgba(127.5, 0, 127.5, 0.5);
 }
 
 .progress-bar-black {
