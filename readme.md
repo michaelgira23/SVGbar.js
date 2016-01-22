@@ -38,6 +38,7 @@ This will create a green circle progress bar filled in at 45%.
 ## Available Classes
 | Class | Use |
 | ------------- | ------------- |
+| .svg-progress-bar | Triggers SVGbar.js |
 | .svg-progress-bar-thin | Makes the progress bar thinner |
 | .svg-progress-bar-green | Makes the progress bar green |
 | .svg-progress-bar-blue | Makes the progress bar blue |
