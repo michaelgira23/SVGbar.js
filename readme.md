@@ -3,23 +3,23 @@
 ## What is SVGbar.js?
 Well I'm glad you asked, random stranger! SVGbar.js will completely redefine what you think about progress bars **to this day.** It allows for you to make progress bars with SVG lines, shapes, paths, and more! It takes advantage of the `stroke-dasharray` and the `stroke-dashoffset` of any given SVG shape.
 
-## Installation
-Simply download the repository, and place the `SVGbar.js` in a really cool spot and the `SVGbar.css` in a really cool spot.
+## Demo
+You can find a live demo [here](https://michaelgira.me/svg-bar)
 
-Place this somewhere in your head of your HTML file:
+## Installation
+Simply download the repository, and place the `SVGbar.js` and the `SVGbar.css` in a really cool spot.
+
+Place this little snippet somewhere in your head of your HTML file:
 ```html
 <!-- Make the progress bars pretty -->
 <link rel="stylesheet" href="path/to/SVGbar.css">
 ```
 
-And place this at the bottom of your body of your HTML file:
+And place this snippet at the bottom of your body of your HTML file:
 ```html
 <!-- Make the progress bars do stuff -->
 <script src="path/to/SVGbar.js"></script>
 ```
-
-## Demo
-You can find a live demo [here](https://michaelgira.me/svg-bar)
 
 ## Use
 Simply add the `progress` namespace to your SVG and apply the `svg-progress-bar` class to any SVG shape. This will make the said element an applicable progress bar. **Nothing will happen until you add the `progress:percent="##"` attribute to the given element to a valid progress bar.** This attribute can be anywhere from 0 to 100.
@@ -34,19 +34,29 @@ Simply add the `progress` namespace to your SVG and apply the `svg-progress-bar`
 This will create a green circle progress bar filled in at 45%.
 
 ## Available Classes
+
+### General Classes
 | Class | Use |
-| ------------- | ------------- |
+| --- | --- |
 | .svg-progress-bar | Triggers SVGbar.js |
 | .svg-progress-bar-thin | Makes the progress bar thinner |
-| .progress-bar-green | Makes the progress bar green |
-| .progress-bar-blue | Makes the progress bar blue |
-| .progress-bar-yellow | Makes the progress bar yellow |
-| .progress-bar-red | Makes the progress bar red |
-| .progress-bar-black | Makes the progress bar black |
 | .progress-label | A label for your progress bars |
 
-## Note
-Watch out! Circles are rotated by -90 degress so the line will start on the top and proceed clockwise.
+### Colors
+Place these classes in your SVG shape to make them *beautiful*
+| Class | Color |
+| --- | --- |
+| .svg-progress-bar-red | Red |
+| .svg-progress-bar-orange | Orange |
+| .svg-progress-bar-yellow | Yellow |
+| .svg-progress-bar-green | Green |
+| .svg-progress-bar-blue | Blue |
+| .svg-progress-bar-purple | Purple |
+| .svg-progress-bar-black | Definitely not black |
+
+## Notes
+- **Watch out!** Circles are rotated by -90 degress so the line will start on the top and proceed clockwise.
+- **Protip:** Want your progress bar to start on the other end? Made the percentage negative!
 
 ## License
 
