@@ -3,9 +3,6 @@
 ## What is SVGbar.js?
 Well I'm glad you asked, random stranger! SVGbar.js will completely redefine what you think about progress bars **to this day.** It allows for you to make progress bars with SVG lines, shapes, paths, and more! It takes advantage of the `stroke-dasharray` and the `stroke-dashoffset` of any given SVG shape.
 
-## Requirements
-Hey, look at that! SVGbar.js requires **no external libraries**! Isn't that great?
-
 ## Installation
 Simply download the repository, and place the `SVGbar.js` in a really cool spot and the `SVGbar.css` in a really cool spot.
 
@@ -17,7 +14,6 @@ Place this somewhere in your head of your HTML file:
 
 And place this at the bottom of your body of your HTML file:
 ```html
-
 <!-- Make the progress bars do stuff -->
 <script src="path/to/SVGbar.js"></script>
 ```
@@ -26,9 +22,11 @@ And place this at the bottom of your body of your HTML file:
 You can find a live demo [here](https://michaelgira.me/svg-bar)
 
 ## Use
-Simply add the `progress` namespace to your SVG, apply the `svg-progress-bar` class to any shape, and assign `progress:percent` to a percentage between 0 and 100. Reference the example below:
+Simply add the `progress` namespace to your SVG and apply the `svg-progress-bar` class to any SVG shape. This will make the said element an applicable progress bar. **Nothing will happen until you add the `progress:percent="##"` attribute to the given element to a valid progress bar.** This attribute can be anywhere from 0 to 100.
 ```html
-<div class="progress-label">Progress!</div> <!-- Optional! -->
+<!-- Optional! -->
+<div class="progress-label">This is my cool Progress Bar</div>
+
 <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
     <circle class="svg-progress-bar progress-bar-green progress-bar-thin" cx="-500" cy="500" r="420" progress:percent="45"></circle>
 </svg>
