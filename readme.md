@@ -23,6 +23,9 @@ And place this snippet at the bottom of your body of your HTML file:
 
 ## Use
 Simply add the `progress` namespace to your SVG and apply the `.svg-progress-bar` class to any SVG shape. This will make the said element an applicable progress bar. **Nothing will happen until you add the `progress:percent="##"` attribute to the given element to a valid progress bar.** This attribute can be anywhere from 0 to 100.
+
+![alt text](http://i.imgur.com/ZOYuDKr.gifv "Example Progress Bar")
+
 ```html
 <!-- Optional! -->
 <div class="progress-label">This is my cool Progress Bar</div>
