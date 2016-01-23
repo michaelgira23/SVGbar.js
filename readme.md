@@ -70,6 +70,8 @@ Place these classes in your SVG shape to make them *beautiful*
 | .svg-progress-bar-blue | Blue |
 | .svg-progress-bar-purple | Purple |
 | .svg-progress-bar-black | Definitely not black |
+| .svg-progress-bar-gray | Gray |
+| .svg-progress-bar-grey | **Gray** |
 
 ## Notes
 - **Watch out!** Circles are rotated by -90 degress so the line will start on the top and proceed clockwise.

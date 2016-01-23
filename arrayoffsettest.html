@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Array and Offset Test</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="SVGbar.css">
+        <style>
+            
+            .svg-progress {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .svg-progress-bar {
+                width: 70%;
+                stroke-opacity: 100%;
+            }
+            
+            .progress-bar-green {
+                stroke: rgba(0, 128, 0, 1);
+            }
+            
+            .control {
+                text-align: center;
+                width: 50%;
+                margin: 0 auto;
+            }
+            
+            .array-output,
+            .offset-output {
+                display: block;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+        <div class="svg-progress">
+            <div class="progress-label"></div>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 200">
+                <line class="svg-progress-bar progress-bar-green" x1="25" y1="100" x2="975" y2="100"></line>
+                <line class="svg-progress-bar progress-bar-gray" x1="25" y1="100" x2="975" y2="100"></line>
+            </svg>
+        </div>
+        
+        <div class="control">
+            <div class="progress-label">stroke-dasharray</div>
+            <span class="array-output">45</span>
+            <input class="array-input" type="range" min="0" max="1000">
+            
+            <div class="progress-label">stroke-dashoffset</div>
+            <span class="offset-output">45</span>
+            <input class="offset-input" type="range" min="0" max="1000">
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!--        <script src="SVGbar.js"></script>-->
+        <script>
+            
+            var line = $('.svg-progress-bar');
+            var DOMline = line.get(0);
+            
+            var arrayInput = $('.array-input');
+            var arrayOutput = $('.array-output');
+            
+            var offsetInput = $('.offset-input');
+            var offsetOutput = $('.offset-output');
+            
+            $('.progress-label').first().text('Length of Line: ' + lineLength(line.get(0)));
+            
+            setInterval(function() {
+                var arrayVal = arrayInput.val();
+                var offsetVal = offsetInput.val();
+                
+                arrayOutput.text(arrayVal);
+                offsetOutput.text(offsetVal);
+                
+                DOMline.setAttribute('stroke-dasharray', arrayVal);
+                DOMline.setAttribute('stroke-dashoffset', offsetVal);
+                
+            }, 10);
+            
+            function lineLength(progressBar) {
+                var x1 = progressBar.getAttribute('x1');
+                var y1 = progressBar.getAttribute('y1');
+                var x2 = progressBar.getAttribute('x2');
+                var y2 = progressBar.getAttribute('y2');
+                return distance(x1, y1, x2, y2);
+            }
+            
+            function distance(x1, y1, x2, y2) {
+                return Math.sqrt( Math.pow((x2-x1),2) + Math.pow((y2-y1),2) );
+            }
+        </script>
+    </body>
+</html>

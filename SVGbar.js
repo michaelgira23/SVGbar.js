@@ -115,8 +115,11 @@
                     break;
             }
             
-            progressBar.setAttribute('stroke-dasharray', perimeter);
-            progressBar.setAttribute('stroke-dashoffset', perimeter - (perimeter * (percentage / 100)) );
+            var offsetLength = perimeter * (offset / 100);
+            var offsetPerimeter = perimeter - offsetLength;
+            
+            progressBar.setAttribute('stroke-dasharray', offsetPerimeter);
+            progressBar.setAttribute('stroke-dashoffset', offsetPerimeter - (offsetPerimeter * (percentage / 100)) - perimeter);
         }
     }
     
