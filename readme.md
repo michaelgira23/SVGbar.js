@@ -63,13 +63,13 @@ Place these classes in your SVG shape to make them *beautiful*
 
 | Class | Color |
 | --- | --- |
-| .svg-progress-bar-red | Red |
-| .svg-progress-bar-orange | Orange |
-| .svg-progress-bar-yellow | Yellow |
-| .svg-progress-bar-green | Green |
-| .svg-progress-bar-blue | Blue |
-| .svg-progress-bar-purple | Purple |
-| .svg-progress-bar-black | Definitely not black |
+| .progress-bar-red | Red |
+| .progress-bar-orange | Orange |
+| .progress-bar-yellow | Yellow |
+| .progress-bar-green | Green |
+| .progress-bar-blue | Blue |
+| .progress-bar-purple | Purple |
+| .progress-bar-black | Definitely not black |
 
 ## Notes
 - **Watch out!** Circles are rotated by -90 degress so the line will start on the top and proceed clockwise.
