@@ -36,6 +36,7 @@
             
             var progressBar = progressBars[e];
             var percentage = progressBar.getAttribute('progress:percent');
+            var offset = progressBar.getAttribute('progress:offset');
             var tag = progressBar.tagName.toLowerCase();
             
             switch(tag) {
