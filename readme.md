@@ -33,6 +33,20 @@ Simply add the `progress` namespace to your SVG and apply the `.svg-progress-bar
 ```
 This will create a green circle progress bar filled in at 45%.
 
+## Available Shapes
+
+The following SVG elements are currently supported and their outline/path can be used as a progress bar:
+
+- `<circle>`
+- `<ellipse>`
+- `<line>`
+- `<polygon>`
+- `<polyline>`
+- `<rect>`
+- `<path>`
+
+If there are any more shapes that we have missed, you can issue a pull request.
+
 ## Available Classes
 
 ### General Classes
