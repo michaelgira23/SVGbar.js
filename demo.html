@@ -79,7 +79,7 @@
             <div class="svg-progress">
                 <div class="progress-label">I'm so boring</div>
                 <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 200">
-                    <line class="svg-progress-bar progress-bar-green" x1="25" y1="100" x2="975" y2="100" progress:percent="45" progress:offset="20"></line>
+                    <line class="svg-progress-bar progress-bar-green" x1="25" y1="100" x2="975" y2="100"></line>
                 </svg>
             </div>
         </div>
@@ -90,7 +90,7 @@
             <div class="svg-progress">
                 <div class="progress-label">Progress!</div>
                 <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000">
-                    <circle class="svg-progress-bar progress-bar-green" cx="-500" cy="500" r="420" progress:percent="45" progress:offset="20"></circle>
+                    <circle class="svg-progress-bar progress-bar-green" cx="-500" cy="500" r="420" progress:percent="45" progress:offset="20" progress:compoffset="true"></circle>
                     <circle class="svg-progress-bar progress-bar-blue" cx="-500" cy="500" r="300" progress:percent="45" progress:offset="20"></circle>
                 </svg>
             </div>
@@ -177,7 +177,7 @@
             var input = $('.input');
             var output = $('.output');
             var automatic;
-            setMode(1);
+            setMode(0);
             
             function setMode(mode) {
                 if(mode === 0) {

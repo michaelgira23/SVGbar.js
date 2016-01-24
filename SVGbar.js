@@ -36,7 +36,17 @@
             
             var progressBar = progressBars[e];
             var percentage = progressBar.getAttribute('progress:percent');
+            
             var offset = progressBar.getAttribute('progress:offset');
+            if(offset === null) {
+                offset = 0;
+            }
+            
+            var compOffset = progressBar.getAttribute('progress:compoffset');
+            if(compOffset === null) {
+                compOffset = false;
+            }
+            
             var tag = progressBar.tagName.toLowerCase();
             
             switch(tag) {
@@ -115,11 +125,23 @@
                     break;
             }
             
+            // Algorithm for Calculating Percentages
+            
             var offsetLength = perimeter * (offset / 100);
             var offsetPerimeter = perimeter - offsetLength;
             
-            progressBar.setAttribute('stroke-dasharray', offsetPerimeter);
-            progressBar.setAttribute('stroke-dashoffset', offsetPerimeter - (offsetPerimeter * (percentage / 100)) - perimeter);
+            if(compOffset === "true") {
+                var percentLength = offsetPerimeter * (percentage / 100);
+            } else {
+                var percentLength = perimeter * (percentage / 100);
+            }
+            
+            var dashArray = percentLength + ', ' + (perimeter - percentLength);
+            var dashOffset = offsetLength * -1;
+            
+            progressBar.setAttribute('stroke-dasharray', dashArray);
+            progressBar.setAttribute('stroke-dashoffset', dashOffset);
+            
         }
     }
     
