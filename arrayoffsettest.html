@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="SVGbar.css">
         <style>
+            @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
             
             .svg-progress {
                 display: flex;
@@ -29,6 +30,28 @@
                 margin: 0 auto;
             }
             
+            .control > div {
+                clear: left;
+            }
+            
+            .css {
+                font-family: 'Source Code Pro', sans-serif;
+                width: 45%;
+                text-align: left;
+                font-size: 2em;
+                margin: 0 auto;
+            }
+            
+            .css .form-group {
+                margin-left: 2em;
+            }
+            
+            button {
+                position: relative;
+                top: 0;
+                float: left;
+            }
+            
             .array-output,
             .offset-output {
                 display: block;
@@ -47,19 +70,40 @@
         </div>
         
         <div class="control">
-            <div class="progress-label">stroke-dasharray</div>
-            <span class="array-output">45</span>
-            <input class="array-input" type="range" min="0" max="1000">
+            <button class="change-mode btn btn-success">Mode</button>
             
-            <div class="progress-label">stroke-dashoffset</div>
-            <span class="offset-output">45</span>
-            <input class="offset-input" type="range" min="0" max="1000">
+            <div class="slider">
+                <div class="progress-label">stroke-dasharray</div>
+                <span class="array-output">45</span>
+                <input class="array-input" type="range" min="0" max="1000">
+
+                <div class="progress-label">stroke-dashoffset</div>
+                <span class="offset-output">45</span>
+                <input class="offset-input" type="range" min="-1000" max="1000">
+            </div>
+            
+            <div class="css">
+                <form class="css-form" target="/" action="">
+                    <span>.svg-progress-bar {</span>
+                    <div class="form-group">
+                        <span>stroke-dasharray:</span>
+                        <input class="dasharray form-control">
+                    </div>
+                    <div class="form-group">
+                        <span>stroke-dashoffset:</span>
+                        <input class="dashoffset form-control">
+                    </div>
+                    <span>}</span>
+                    <input type="submit" style="display:none">
+                </form>
+            </div>
         </div>
         
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <!--        <script src="SVGbar.js"></script>-->
         <script>
+            $('input').val(0);
             
             var line = $('.svg-progress-bar');
             var DOMline = line.get(0);
@@ -70,19 +114,64 @@
             var offsetInput = $('.offset-input');
             var offsetOutput = $('.offset-output');
             
+            var dasharray = $('.dasharray');
+            var dashoffset = $('.dashoffset');
+            
+            var showCSS;
+            var changeMode = $('.change-mode').get(0);
+            var css = $('.css');
+            var slider = $('.slider');
+            
+            setMode(0);
+            
             $('.progress-label').first().text('Length of Line: ' + lineLength(line.get(0)));
             
             setInterval(function() {
-                var arrayVal = arrayInput.val();
-                var offsetVal = offsetInput.val();
-                
-                arrayOutput.text(arrayVal);
-                offsetOutput.text(offsetVal);
-                
-                DOMline.setAttribute('stroke-dasharray', arrayVal);
-                DOMline.setAttribute('stroke-dashoffset', offsetVal);
-                
+                if(!showCSS) {
+                    var arrayVal = arrayInput.val();
+                    var offsetVal = offsetInput.val();
+
+                    arrayOutput.text(arrayVal);
+                    offsetOutput.text(offsetVal);
+
+                    DOMline.setAttribute('stroke-dasharray', arrayVal);
+                    DOMline.setAttribute('stroke-dashoffset', offsetVal);
+                }
             }, 10);
+            
+            $('.css-form').submit(function() {
+                DOMline.setAttribute('stroke-dasharray', dasharray.val());
+                DOMline.setAttribute('stroke-dashoffset', dashoffset.val());
+                return false;
+            });
+            
+            function setMode(mode) {
+                if(mode === 0) {
+                    // Slider Interface
+                    
+                    css.hide();
+                    slider.show();
+                    
+                    arrayInput.val(dasharray.val());
+                    offsetInput.val(dashoffset.val());
+                    
+                    showCSS = false;
+                    changeMode.setAttribute('onclick', 'setMode(1)');
+                    
+                } else if(mode === 1) {
+                    // CSS Stylesheet-like Interface
+                    
+                    slider.hide();
+                    css.show();
+                    
+                    dasharray.val(arrayInput.val());
+                    dashoffset.val(offsetInput.val());
+                    
+                    showCSS = true;
+                    changeMode.setAttribute('onclick', 'setMode(0)');
+                    
+                }
+            }
             
             function lineLength(progressBar) {
                 var x1 = progressBar.getAttribute('x1');
