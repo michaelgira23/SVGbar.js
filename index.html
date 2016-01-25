@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SVGbar.js Demo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!--        <link rel="stylesheet" href="http://basehold.it/30">-->
+		<link rel="stylesheet" href="SVGbar.css">
+        
+		
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+			@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+            
+			* {
+				font-family: 'Open Sans', sans-serif;
+			}
+			
+			h1 {
+				font-size: 6em;
+				font-weight: 300;
+			}
+			
+			h2 {
+				font-size: 3em;
+				font-weight: 300;
+				margin-bottom: 0.7em;
+			}
+			
+			h3 {
+				font-size: 2em;
+			}
+			
+			h4 {
+				font-weight: 600;
+				margin-top: 1em;
+			}
+			
+			p {
+				font-size: 1.5em;
+				font-weight: 300;
+			}
+			
+			a {
+				font-weight: 600;
+			}
+			
+			.well, pre {
+				margin-bottom: 3em;
+			}
+			
+			.sidebar {
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				bottom: 0;
+			}
+			
+			.header {
+				margin-top: 0.5em;
+			}
+			
+			.header-desc {
+				margin-bottom: 1.25em;
+			}
+			
+			.circle-example,
+			.line-example {
+				width: 15%;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			.line-example {
+				width: 100%;
+			}
+			
+			/* Syntax Highlighting */
+			
+			pre,
+			pre * {
+				font-family: 'Source Code Pro', sans-serif;
+				font-size: 1em;
+			}
+			
+			pre {
+				color: #333;
+			}
+			
+			pre .gray {
+				color: #969896;
+			}
+			
+			pre .green {
+				color: #63A35C;
+			}
+			
+			pre .purple {
+				color: #795DA3;
+			}
+			
+			pre .blue {
+				color: #183691;
+			}
+			
+			pre .indent {
+				margin-left: 3em;
+			}
+        </style>
+        
+    </head>
+    <body>
+        
+		<svg class="sidebar" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 5 100">
+			<line class="svg-progress-bar" x1="0" y1="0" x2="0" y2="100"></line>
+		</svg>
+		
+		<div class="container">
+			<h1 class="header">SVGbar.js</h1>
+			<h3 class="header-desc">Redefining what you know about progress bars <strong>to this day.</strong></h3>
+		</div>
+		
+		<svg class="circle-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 850 850">
+			<circle class="svg-progress-bar progress-bar-green svg-progress-bar-thin progress-bar-random" cx="-425" cy="425" r="420"></circle>
+		</svg>
+		
+		<div class="container">
+			<h2>So What is SVGbar.js?</h2>
+			<p>Well I'm glad you asked, random stranger! <strong>SVGbar.js allows for you to make progress bars using SVG lines, polygons, paths, and more!</strong> It takes advantage of the <kbd>stroke-dasharray</kbd> and the <kbd>stroke-dashoffset</kbd> of any given SVG shape.</p>
+		</div>
+		
+		<div class="container">
+			<h2>Installation</h2>
+			<p>To install, simply navigate to the <a href="https://github.com/michaelgira23/SVGbar.js">Github Repository</a>, download the repository, and place the <kbd>SVGbar.js</kbd> and <kbd>SVGbar.css</kbd> in a really cool spot.</p>
+			
+			<h4>Place this little snippet somewhere in your head of your HTML file:</h4>
+			<pre><span class="gray">&lt;!-- Make the progress bars pretty --&gt;</span><br>&lt;<span class="green">link</span> <span class="purple">rel</span>=<span class="blue">"stylesheet"</span> <span class="purple">href</span>=<span class="blue">"path/to/SVGbar.css"</span>&gt;</pre>
+			
+			<h4>And place this snippet at the bottom of your body of your HTML file:</h4>
+			<pre><span class="gray">&lt;!-- Make the progress bars do stuff --&gt;</span><br>&lt;<span class="green">script</span> <span class="green">src</span>=<span class="blue">"path/to/SVGbar.js"</span>&gt;&lt;/<span class="green">script</span>&gt;</pre>
+		</div>
+		
+		<div class="container">
+			<h2>Features &amp; Usage</h2>
+			
+			<h3>Initiation</h3>
+			<p>To initiate a progress bar, simply apply the XML namespace <kbd>xmlns:progress="https://michaelgira.me/svg-bar"</kbd> in the SVG tag, and the <kbd>.svg-progress-bar</kbd> on the desired shape element.</p>
+			
+			<h3>Percentage</h3>
+			<p>Now you need to actually <em>control</em> the progress bars. Use the <kbd>progress:percent</kbd> attribute with a number between 0 and 100 to set the progress bar to the corresponding percentage.</p>
+			
+			<h4>For Example:</h4>
+			<pre>&lt;<span class="green">svg</span> <span class="purple">class</span>=<span class="blue">"line-example"</span> <span class="purple">xmlns:progress</span>=<span class="blue">"https://michaelgira.me/svg-bar"</span> <span class="purple">version</span>=<span class="blue">"1.1"</span> <span class="purple">x</span>=<span class="blue">"0px"</span> <span class="purple">y</span>=<span class="blue">"0px"</span> <span class="purple">viewBox</span>=<span class="blue">"0 0 1000 100"</span>&gt;<br><span class="indent">&lt;<span class="green">line</span> <span class="purple">class</span>=<span class="blue">"svg-progress-bar"</span> <span class="purple">x1</span>=<span class="blue">"25"</span> <span class="purple">y1</span>=<span class="blue">"25"</span> <span class="purple">x2</span>=<span class="blue">"975"</span> <span class="purple">y2</span>=<span class="blue">"25"</span> <strong><span class="purple">progress:percent</span>=<span class="blue">"45"</span></strong>&gt;&lt;/<span class="green">line</span>&gt;</span><br>&lt;/<span class="green">svg</span>&gt;</pre>
+			
+			<h4>Output:</h4>
+			<div class="well">
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+					<line class="svg-progress-bar" x1="25" y1="25" x2="975" y2="25" progress:percent="45"></line>
+				</svg>
+			</div>
+			
+			<h3>Offset</h3>
+			<p>You can include an offset by a certain percentage using the <kbd>progress:offset</kbd> attribute. This attribute can be a number between 0 and 100.</p>
+			<h4>For Example:</h4>
+			<pre>&lt;<span class="green">svg</span> <span class="purple">class</span>=<span class="blue">"line-example"</span> <span class="purple">xmlns:progress</span>=<span class="blue">"https://michaelgira.me/svg-bar"</span> <span class="purple">version</span>=<span class="blue">"1.1"</span> <span class="purple">x</span>=<span class="blue">"0px"</span> <span class="purple">y</span>=<span class="blue">"0px"</span> <span class="purple">viewBox</span>=<span class="blue">"0 0 1000 100"</span>&gt;<br><span class="indent">&lt;<span class="green">line</span> <span class="purple">class</span>=<span class="blue">"svg-progress-bar"</span> <span class="purple">x1</span>=<span class="blue">"25"</span> <span class="purple">y1</span>=<span class="blue">"25"</span> <span class="purple">x2</span>=<span class="blue">"975"</span> <span class="purple">y2</span>=<span class="blue">"25"</span> <span class="purple">progress:percent</span>=<span class="blue">"45"</span> <strong><span class="purple">progress:offset</span>=<span class="blue">"10"</span></strong>&gt;&lt;/<span class="green">line</span>&gt;</span><br>&lt;/<span class="green">svg</span>&gt;</pre>
+			
+			<h4>Output:</h4>
+			<div class="well">
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+					<line class="svg-progress-bar" x1="25" y1="25" x2="975" y2="25" progress:percent="45" progress:offset="10"></line>
+				</svg>
+			</div>
+			
+		</div>
+		
+<!--
+		<div class="container">
+			<small>Copyright &copy; 2016 Michael Gira</small>
+		</div>
+-->
+		
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="SVGbar.js"></script>
+        <script>            
+            function getRandom(min, max) {
+                return min + Math.floor(Math.random() * (max - min + 1));
+            }
+			
+			function updateSidebar() {
+				var h = document.documentElement, 
+					b = document.body,
+					st = 'scrollTop',
+					sh = 'scrollHeight';
+
+				var percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+				$('.sidebar .svg-progress-bar').attr('progress:percent', percent);
+			}
+			
+			
+			var randomProgressBars = $('.progress-bar-random');
+			function updateRandomProgress() {
+				randomProgressBars.each(function(index) {
+					var int = getRandom(0, 100);
+					$(this).attr('progress:percent', int);
+				});
+			}
+			
+			updateSidebar();
+			document.addEventListener('scroll', updateSidebar);
+			
+			updateRandomProgress();
+			setInterval(updateRandomProgress, 1000);
+        </script>
+    </body>
+</html>

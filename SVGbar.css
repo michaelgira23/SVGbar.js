@@ -49,6 +49,10 @@ ellipse.svg-progress-bar {
     stroke-width: 1%;
 }
 
+.svg-progress-bar-ultrathin {
+    stroke-width: 0.5%;
+}
+
 .progress-bar-red {
     stroke: rgba(255, 0, 0, 0.5);
 }
@@ -84,6 +88,7 @@ ellipse.svg-progress-bar {
 }
 
 .svg-progress-bar.active {
+	animation-name: blue-active;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
