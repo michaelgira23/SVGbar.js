@@ -50,6 +50,10 @@
 				margin-bottom: 3em;
 			}
 			
+			.container:last-of-type {
+				margin-bottom: 2em;
+			}
+			
 			.sidebar {
 				height: 100%;
 				position: fixed;
@@ -108,6 +112,34 @@
 			pre .indent {
 				margin-left: 3em;
 			}
+			
+			.comp-offset-label-group {
+				position: relative;
+				margin-top: -1em;
+				margin-bottom: 2em;
+			}
+			
+			.comp-offset-label-group span {
+				position: absolute;
+				border-left: 0.1em solid black;
+				padding-left: 0.25em;
+			}
+			
+			.comp-offset-label-group .ten {
+				margin-left: 10%;
+			}
+			
+			.comp-offset-label-group .fifty {
+				margin-left: 50%;
+			}
+			
+			.comp-offset-label-group .fiftyfive {
+				margin-left: 55%;
+			}
+			
+			.comp-offset-label-group .sixty {
+				margin-left: 60%;
+			}
         </style>
         
     </head>
@@ -123,7 +155,7 @@
 		</div>
 		
 		<svg class="circle-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 850 850">
-			<circle class="svg-progress-bar progress-bar-green svg-progress-bar-thin progress-bar-random" cx="-425" cy="425" r="420"></circle>
+			<circle class="svg-progress-bar progress-bar-green svg-progress-bar-thin random-percent" cx="-425" cy="425" r="420"></circle>
 		</svg>
 		
 		<div class="container">
@@ -173,13 +205,44 @@
 				</svg>
 			</div>
 			
+			<h3>Compensate Offset</h3>
+			<p>You can control how the progress bar behaves with an offset using the <kbd>progress:compoffset</kbd> attribute. By default, this attribute is set to <strong>false</strong>. Offset compensation will take into account the existing offset when calculating the percentage width.</p>
+			<p>As an example, a progress bar with an offset of 10% and a percentage of 50% would normally fill 60% of the progress bar. With <kbd>progress:compoffset="true"</kbd>, the progress bar would actually reach 55%, because that is 50% of the width, minus the offset. Reference the example below:</p>
+			
+			<div class="well">
+				<h4><kbd>progress:compoffset="false"</kbd> (Default)</h4>
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+					<line class="svg-progress-bar comp-offset-example" x1="25" y1="25" x2="975" y2="25" progress:percent="50" progress:offset="10"></line>
+				</svg>
+				<div class="comp-offset-label-group">
+					<span class="ten">10%</span>
+					<span class="fifty">50%</span>
+					<span class="fiftyfive">55%</span>
+					<span class="sixty">60%</span>
+				</div>
+				<h5><strong>Offset</strong>: 10%</h5>
+				<h5><strong>Percentage</strong>: 50%</h5>
+				
+				<h4><kbd>progress:compoffset="true"</kbd></h4>
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+					<line class="svg-progress-bar comp-offset-example" x1="25" y1="25" x2="975" y2="25" progress:percent="50" progress:offset="10" progress:compoffset="true"></line>
+				</svg>
+				<div class="comp-offset-label-group">
+					<span class="ten">10%</span>
+					<span class="fifty">50%</span>
+					<span class="fiftyfive">55%</span>
+					<span class="sixty">60%</span>
+				</div>
+				<h5><strong>Offset</strong>: 10%</h5>
+				<h5><strong>Percentage</strong>: 50%</h5>
+				
+			</div>
+			
 		</div>
 		
-<!--
 		<div class="container">
 			<small>Copyright &copy; 2016 Michael Gira</small>
 		</div>
--->
 		
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -200,7 +263,7 @@
 			}
 			
 			
-			var randomProgressBars = $('.progress-bar-random');
+			var randomProgressBars = $('.random-percent');
 			function updateRandomProgress() {
 				randomProgressBars.each(function(index) {
 					var int = getRandom(0, 100);
@@ -213,6 +276,7 @@
 			
 			updateRandomProgress();
 			setInterval(updateRandomProgress, 1000);
+			
         </script>
     </body>
 </html>
