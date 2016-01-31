@@ -23,15 +23,6 @@
  *
  */
 
-.progress-label {
-    background-color: rgba(33, 176, 178, 0.5);
-    color: rgba(39, 47, 47, 0.7);
-    padding: 0.3em;
-    border-radius: 0.25em;
-    display: inline-block;
-    margin: 1em;
-}
-
 circle.svg-progress-bar,
 ellipse.svg-progress-bar {
     transform: rotate(-90deg);

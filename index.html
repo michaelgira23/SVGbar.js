@@ -68,6 +68,7 @@
 			
 			.header-desc {
 				margin-bottom: 1.25em;
+                font-weight: 300;
 			}
 			
 			.circle-example,
@@ -146,7 +147,7 @@
     <body>
         
 		<svg class="sidebar" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 5 100">
-			<line class="svg-progress-bar" x1="0" y1="0" x2="0" y2="100"></line>
+			<line class="svg-progress-bar progress-bar-red" x1="0" y1="0" x2="0" y2="100"></line>
 		</svg>
 		
 		<div class="container">
@@ -239,6 +240,80 @@
 			</div>
 			
 		</div>
+        
+        <div class="container">
+            <h2>Classes</h2>
+            <p>You can also customize the progress bars with a set of predefined colors! Here is a table with a list of available classes.</p>
+            
+            <h3>General Classes</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>.svg-progress-bar</td>
+                        <td>Turns an SVG element into a progress bar</td>
+                    </tr>
+                    <tr>
+                        <td>.active</td>
+                        <td>Make a progress bar flash</td>
+                    </tr>
+                    <tr>
+                        <td>.svg-progress-bar-thin</td>
+                        <td>Makes the progress bar thinner</td>
+                    </tr>
+                    <tr>
+                        <td>.svg-progress-bar-ultrathin</td>
+                        <td>Makes the progress bar really thin</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Colors</h3>
+            <h4>Red <small>.progress-bar-red</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-red rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+            
+            <h4>Orange <small>.progress-bar-orange</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-orange rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+            
+            <h4>Yellow <small>.progress-bar-yellow</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-yellow rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+            
+            <h4>Green <small>.progress-bar-green</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-green rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+            
+            <h4>Blue <small>.progress-bar-blue</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-blue rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+            
+            <h4>Purple <small>.progress-bar-purple</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-purple rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+            
+            <h4>Black <small>.progress-bar-black</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-black rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+            
+            <h4>Gray <small>.progress-bar-gray or .progress-bar-grey</small></h4>
+            <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <line class="svg-progress-bar progress-bar-gray rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
+            </svg>
+        </div>
 		
 		<div class="container">
 			<small>Copyright &copy; 2016 Michael Gira</small>
@@ -270,6 +345,32 @@
 					$(this).attr('progress:percent', int);
 				});
 			}
+            
+            var rainbowBars = $('.rainbow-colors');
+            var rainbowExtended = false;
+            var rainbowIntervalDelay = 100;
+            
+            function nextRainbow(index, percent) {
+                rainbowBars.eq(index).attr('progress:percent', percent);
+                
+                if(index !== rainbowBars.length - 1) {
+                    setTimeout(function() { nextRainbow(++index, percent); }, rainbowIntervalDelay);
+                }
+            }
+            
+            setInterval(function() {
+                
+                rainbowBars.each(function(index) {
+                    if(rainbowExtended) {
+                        nextRainbow(0, 10);
+                    } else {
+                        nextRainbow(0, 100);
+                    }
+                    
+                });
+                
+                rainbowExtended = !rainbowExtended;
+            }, 1500);
 			
 			updateSidebar();
 			document.addEventListener('scroll', updateSidebar);
