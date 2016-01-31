@@ -231,7 +231,7 @@
     </head>
     <body>
         
-		<svg class="sidebar" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 5 100">
+		<svg class="sidebar" xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 5 100">
 			<line class="svg-progress-bar progress-bar-red" x1="0" y1="0" x2="0" y2="100"></line>
 		</svg>
         
@@ -240,7 +240,7 @@
                 <h1 class="header">SVGbar.js</h1>
                 <h3 class="header-desc">Redefining what you know about progress bars <strong>to this day.</strong></h3>
                 
-                <svg class="circle-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 850 850">
+                <svg class="circle-example" xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 850 850">
                     <circle class="svg-progress-bar progress-bar-green svg-progress-bar-thin random-percent" cx="-425" cy="425" r="420"></circle>
                 </svg>
 
@@ -268,17 +268,17 @@
 			<h2>Features &amp; Usage</h2>
 			
 			<h3>Initiation</h3>
-			<p>To initiate a progress bar, simply apply the XML namespace <kbd>xmlns:progress="https://michaelgira.me/svg-bar"</kbd> in the SVG tag, and the <kbd>.svg-progress-bar</kbd> on the desired shape element.</p>
+			<p>To initiate a progress bar, simply apply the XML namespace <kbd>xmlns:progress="https://michaelgira.me/svgbar.js"</kbd> in the SVG tag, and the <kbd>.svg-progress-bar</kbd> on the desired shape element.</p>
 			
 			<h3>Percentage</h3>
 			<p>Now you need to actually <em>control</em> the progress bars. Use the <kbd>progress:percent</kbd> attribute with a number between 0 and 100 to set the progress bar to the corresponding percentage.</p>
 			
 			<h4>For Example:</h4>
-			<pre>&lt;<span class="green">svg</span> <span class="purple">class</span>=<span class="blue">"line-example"</span> <span class="purple">xmlns:progress</span>=<span class="blue">"https://michaelgira.me/svg-bar"</span> <span class="purple">version</span>=<span class="blue">"1.1"</span> <span class="purple">x</span>=<span class="blue">"0px"</span> <span class="purple">y</span>=<span class="blue">"0px"</span> <span class="purple">viewBox</span>=<span class="blue">"0 0 1000 100"</span>&gt;<br><span class="indent">&lt;<span class="green">line</span> <span class="purple">class</span>=<span class="blue">"svg-progress-bar"</span> <span class="purple">x1</span>=<span class="blue">"25"</span> <span class="purple">y1</span>=<span class="blue">"25"</span> <span class="purple">x2</span>=<span class="blue">"975"</span> <span class="purple">y2</span>=<span class="blue">"25"</span> <strong><span class="purple">progress:percent</span>=<span class="blue">"45"</span></strong>&gt;&lt;/<span class="green">line</span>&gt;</span><br>&lt;/<span class="green">svg</span>&gt;</pre>
+			<pre>&lt;<span class="green">svg</span> <span class="purple">class</span>=<span class="blue">"line-example"</span> <span class="purple">xmlns:progress</span>=<span class="blue">"https://michaelgira.me/svgbar.js"</span> <span class="purple">version</span>=<span class="blue">"1.1"</span> <span class="purple">x</span>=<span class="blue">"0px"</span> <span class="purple">y</span>=<span class="blue">"0px"</span> <span class="purple">viewBox</span>=<span class="blue">"0 0 1000 100"</span>&gt;<br><span class="indent">&lt;<span class="green">line</span> <span class="purple">class</span>=<span class="blue">"svg-progress-bar"</span> <span class="purple">x1</span>=<span class="blue">"25"</span> <span class="purple">y1</span>=<span class="blue">"25"</span> <span class="purple">x2</span>=<span class="blue">"975"</span> <span class="purple">y2</span>=<span class="blue">"25"</span> <strong><span class="purple">progress:percent</span>=<span class="blue">"45"</span></strong>&gt;&lt;/<span class="green">line</span>&gt;</span><br>&lt;/<span class="green">svg</span>&gt;</pre>
 			
 			<h4>Output:</h4>
 			<div class="well">
-				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
 					<line class="svg-progress-bar" x1="25" y1="25" x2="975" y2="25" progress:percent="45"></line>
 				</svg>
 			</div>
@@ -286,11 +286,11 @@
 			<h3>Offset</h3>
 			<p>You can include an offset by a certain percentage using the <kbd>progress:offset</kbd> attribute. This attribute can be a number between 0 and 100.</p>
 			<h4>For Example:</h4>
-			<pre>&lt;<span class="green">svg</span> <span class="purple">class</span>=<span class="blue">"line-example"</span> <span class="purple">xmlns:progress</span>=<span class="blue">"https://michaelgira.me/svg-bar"</span> <span class="purple">version</span>=<span class="blue">"1.1"</span> <span class="purple">x</span>=<span class="blue">"0px"</span> <span class="purple">y</span>=<span class="blue">"0px"</span> <span class="purple">viewBox</span>=<span class="blue">"0 0 1000 100"</span>&gt;<br><span class="indent">&lt;<span class="green">line</span> <span class="purple">class</span>=<span class="blue">"svg-progress-bar"</span> <span class="purple">x1</span>=<span class="blue">"25"</span> <span class="purple">y1</span>=<span class="blue">"25"</span> <span class="purple">x2</span>=<span class="blue">"975"</span> <span class="purple">y2</span>=<span class="blue">"25"</span> <span class="purple">progress:percent</span>=<span class="blue">"45"</span> <strong><span class="purple">progress:offset</span>=<span class="blue">"10"</span></strong>&gt;&lt;/<span class="green">line</span>&gt;</span><br>&lt;/<span class="green">svg</span>&gt;</pre>
+			<pre>&lt;<span class="green">svg</span> <span class="purple">class</span>=<span class="blue">"line-example"</span> <span class="purple">xmlns:progress</span>=<span class="blue">"https://michaelgira.me/svgbar.js"</span> <span class="purple">version</span>=<span class="blue">"1.1"</span> <span class="purple">x</span>=<span class="blue">"0px"</span> <span class="purple">y</span>=<span class="blue">"0px"</span> <span class="purple">viewBox</span>=<span class="blue">"0 0 1000 100"</span>&gt;<br><span class="indent">&lt;<span class="green">line</span> <span class="purple">class</span>=<span class="blue">"svg-progress-bar"</span> <span class="purple">x1</span>=<span class="blue">"25"</span> <span class="purple">y1</span>=<span class="blue">"25"</span> <span class="purple">x2</span>=<span class="blue">"975"</span> <span class="purple">y2</span>=<span class="blue">"25"</span> <span class="purple">progress:percent</span>=<span class="blue">"45"</span> <strong><span class="purple">progress:offset</span>=<span class="blue">"10"</span></strong>&gt;&lt;/<span class="green">line</span>&gt;</span><br>&lt;/<span class="green">svg</span>&gt;</pre>
 			
 			<h4>Output:</h4>
 			<div class="well">
-				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
 					<line class="svg-progress-bar" x1="25" y1="25" x2="975" y2="25" progress:percent="45" progress:offset="10"></line>
 				</svg>
 			</div>
@@ -301,7 +301,7 @@
 			
 			<div class="well">
 				<h4><kbd>progress:compoffset="false"</kbd> (Default)</h4>
-				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
 					<line class="svg-progress-bar comp-offset-example" x1="25" y1="25" x2="975" y2="25" progress:percent="50" progress:offset="10"></line>
 				</svg>
 				<div class="comp-offset-label-group">
@@ -314,7 +314,7 @@
 				<h5><strong>Percentage</strong>: 50%</h5>
 				
 				<h4><kbd>progress:compoffset="true"</kbd></h4>
-				<svg class="line-example" xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+				<svg class="line-example" xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
 					<line class="svg-progress-bar comp-offset-example" x1="25" y1="25" x2="975" y2="25" progress:percent="50" progress:offset="10" progress:compoffset="true"></line>
 				</svg>
 				<div class="comp-offset-label-group">
@@ -365,42 +365,42 @@
             <h3>Colors</h3>
             <div class="well">
                 <h4>Red <small>.progress-bar-red</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-red rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
 
                 <h4>Orange <small>.progress-bar-orange</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-orange rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
 
                 <h4>Yellow <small>.progress-bar-yellow</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-yellow rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
 
                 <h4>Green <small>.progress-bar-green</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-green rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
 
                 <h4>Blue <small>.progress-bar-blue</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-blue rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
 
                 <h4>Purple <small>.progress-bar-purple</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-purple rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
 
                 <h4>Black <small>.progress-bar-black</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-black rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
 
                 <h4>Gray <small>.progress-bar-gray or .progress-bar-grey</small></h4>
-                <svg xmlns:progress="https://michaelgira.me/svg-bar" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
+                <svg xmlns:progress="https://michaelgira.me/svgbar.js" version="1.1" x="0px" y="0px" viewBox="0 0 1000 50">
                     <line class="svg-progress-bar progress-bar-gray rainbow-colors" x1="25" y1="25" x2="975" y2="25" progress:percent="10"></line>
                 </svg>
             </div>
