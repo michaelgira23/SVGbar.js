@@ -1,5 +1,5 @@
 # SVGbar.js
-(Not super up to date! Look at the `index.html` for more detailed info.)
+(This README is not super up to date! Look at the `index.html` for more detailed info.)
 
 ## What is SVGbar.js?
 Well I'm glad you asked, random stranger! SVGbar.js will completely redefine what you think about progress bars **to this day.** It allows for you to make progress bars using SVG lines, polygons, paths, and more! It takes advantage of the `stroke-dasharray` and the `stroke-dashoffset` of any given SVG shape.
