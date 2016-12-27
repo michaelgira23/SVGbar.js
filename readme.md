@@ -1,3 +1,6 @@
+# DISCLAIMER
+**I made this library a long time ago as a beginner. This is bad code that should not be used!**
+
 # SVGbar.js
 (This README is not super up to date! Look at the `index.html` for more detailed info.)
 
